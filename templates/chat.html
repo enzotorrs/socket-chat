@@ -2,31 +2,26 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <style>
-            .chat {
-                display: flex;
-                flex-direction: column;
-            }
-            .chat span {
-                margin-bottom: 5px;
-            }
-        </style>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"
     </head>
 
     <body>
-        <div class="chat">
-        {% for mensagem in mensagems %}
-        <span><strong>{{mensagem.nome}}:</strong> {{mensagem.message}}</span>
-        {% endfor %}
+        <img class="imagem_chat" src="{{ url_for('static', filename='lotus_chat.png') }}"
+        <div class="box">
+            <div class="chat">
+            {% for mensagem in mensagems %}
+            <span><strong>{{mensagem.nome}}:</strong> {{mensagem.message}}</span>
+            {% endfor %}
 
-        </div>
-        <div>
-            <form>
-                <input type="text" placeholder="insira seu nome">
-                <input type="text" placeholder="insira sua mensagem">
-                <button type="submit">submit</button>
-            </form>
+            </div>
+            <div>
+                <form class="inputs">
+                    <input type="text" placeholder="insira seu nome">
+                    <input type="text" placeholder="insira sua mensagem">
+                    <button type="submit">submit</button>
+                </form>
 
+            </div>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.2/socket.io.js"></script>
         <script>
