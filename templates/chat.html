@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            .chat {
+                display: flex;
+                flex-direction: column;
+            }
+            .chat span {
+                margin-bottom: 5px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="chat">
+        {% for mensagem in mensagems %}
+        <span><strong>{{mensagem.nome}}:</strong> {{mensagem.message}}</span>
+        {% endfor %}
+
+        </div>
+        <div>
+            <form>
+                <input type="text" placeholder="insira seu nome">
+                <input type="text" placeholder="insira sua mensagem">
+                <button type="submit">submit</button>
+            </form>
+
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.2/socket.io.js"></script>
+        <script>
+            window.onload = function(){
+                function addToChat(msg){
+                    const span = document.createElement("span");
+                    const chat = document.querySelector(".chat");
+                    span.innerHTML = `<strong>${msg.nome}:</strong> ${msg.message}`
+                    chat.append(span);
+
+                }
+                const socket = io("http://192.168.0.22:5000");
+
+                socket.on('conect', () => {
+                    socket.send('usuario conectado')
+                });
+
+                document.querySelector('form').addEventListener("submit", function(){
+                    event.preventDefault();
+                    socket.emit('sendMessage', {nome: event.target[0].value, message: event.target[1].value})
+
+                    if (event.target[0].value === ""){
+                        socket.emit('clearMessages');
+                    }
+
+                    event.target[1].value = "";
+                })
+
+                socket.on('getMsg', (msg) => {
+                    addToChat(msg);
+                });
+            }
+        </script>
+    </body>
+</html>
