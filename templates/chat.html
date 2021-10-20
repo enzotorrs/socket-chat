@@ -16,7 +16,7 @@
             </div>
             <div>
                 <form class="inputs">
-                    <input type="text" placeholder="insira seu nome">
+                    <input type="hidden" value="{{ session.user }}">
                     <input type="text" placeholder="insira sua mensagem">
                     <button type="submit">submit</button>
                 </form>

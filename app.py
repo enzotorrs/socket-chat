@@ -1,5 +1,6 @@
 from datetime import datetime
 from flask import Flask, render_template, session, redirect, request
+from flask.helpers import url_for
 from flask_socketio import SocketIO, emit
 
 app = Flask(__name__)
@@ -26,7 +27,7 @@ def login():
 @app.route('/autenticar', methods=['POST', ])
 def autenticar():
     session['user'] = request.form['user']
-    return redirect('/')
+    return redirect(url_for('home'))
 
 @io.on('sendMessage')
 def message_handler(msg):
