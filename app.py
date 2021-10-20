@@ -4,8 +4,8 @@ from flask.helpers import url_for
 from flask_socketio import SocketIO, emit
 
 app = Flask(__name__)
-app.secret_key= "lotus"
 io = SocketIO(app)
+app.secret_key= "lotus"
 
 mensagems = []
 
@@ -27,6 +27,7 @@ def login():
 @app.route('/trocarUsuario')
 def trocar_usuario():
     return redirect(url_for('login'))
+
 @app.route('/autenticar', methods=['POST', ])
 def autenticar():
     session['user'] = request.form['user']
@@ -37,10 +38,6 @@ def message_handler(msg):
     msg['time'] = get_time_now()
     mensagems.append(msg);
     emit('getMsg', msg, broadcast=True)
-
-@io.on('clearMessages')
-def clear_messages_handler():
-    mensagems.clear()
 
 
 if __name__ == "__main__":

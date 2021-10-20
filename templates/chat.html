@@ -11,7 +11,7 @@
         <div class="box">
             <div class="chat">
             {% for mensagem in mensagems %}
-            <span><strong>{{mensagem.nome}}:</strong> {{mensagem.message}}</span>
+            <span><strong>{{mensagem.nome}}:</strong> {{mensagem.message}} {{mensagem.time}}</span>
             {% endfor %}
 
             </div>
@@ -30,7 +30,7 @@
                 function addToChat(msg){
                     const span = document.createElement("span");
                     const chat = document.querySelector(".chat");
-                    span.innerHTML = `<strong>${msg.nome}:</strong> ${msg.message}`
+                    span.innerHTML = `<strong>${msg.nome}:</strong> ${msg.message} ${msg.time}`
                     chat.append(span);
 
                 }
@@ -43,10 +43,6 @@
                 document.querySelector('form').addEventListener("submit", function(){
                     event.preventDefault();
                     socket.emit('sendMessage', {nome: event.target[0].value, message: event.target[1].value})
-
-                    if (event.target[0].value === ""){
-                        socket.emit('clearMessages');
-                    }
 
                     event.target[1].value = "";
                 })
