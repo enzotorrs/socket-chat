@@ -51,6 +51,7 @@
                 })
 
                 socket.on('getMsg', (msg) => {
+                    console.log(msg)
                     addToChat(msg);
                 });
             }
