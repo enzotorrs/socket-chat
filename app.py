@@ -24,6 +24,9 @@ def home():
 def login():
     return render_template("login.html")
 
+@app.route('/trocarUsuario')
+def trocar_usuario():
+    return redirect(url_for('login'))
 @app.route('/autenticar', methods=['POST', ])
 def autenticar():
     session['user'] = request.form['user']
