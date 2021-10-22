@@ -31,18 +31,26 @@ body{
     margin-bottom: 20px;
 }
 
-.chat span {
-    background: #ffc4d8;
+.chat .message, .message_mine{
     margin-top: 25px;
     width: 1100px;
     height: 50px;
     border-radius: 9px ;
     position: relative;
     padding: 10px;
+    box-sizing: content-box;
+    overflow: hidden;
+    text-overflow: clip;
 }
 
-.chat span:after{
+.chat .message{
+    background-color: #ffc4d8;
+}
+.chat .message_mine{
+    background: #cccccc;
+}
 
+.chat .message:after{
     content: "";
 
     width: 0;
@@ -53,10 +61,23 @@ body{
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
     border-top: 22px solid #ffc4d8;
-
-    
     bottom: -20px;
     left: 0.8%;
+}
+.chat .message_mine:after{
+
+    content: "";
+
+    width: 0;
+    height: 0;
+
+    position: absolute;
+
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 22px solid #cccccc;
+    bottom: -20px;
+    right: 0.8%;
 }
 
 .chat strong {
