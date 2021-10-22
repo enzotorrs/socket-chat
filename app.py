@@ -11,7 +11,7 @@ mensagems = []
 
 def get_time_now():
     now = datetime.now()
-    current_time = now.strftime("%H:%M:%S")
+    current_time = now.strftime("%H:%M")
     return current_time
 
 @app.route("/")

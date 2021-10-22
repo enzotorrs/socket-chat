@@ -1,37 +1,85 @@
+body{
+    background-color: #15034f;
+}
+.trocar_usuario {
+    color: #15034f;
+
+}
+
 .box {
     margin-left: 10px;
 }
 
 .imagem_chat {
     padding: 20px;
-    width: 400px;
+    width: auto;
+    height: auto;
+    max-width: 250px;
+    max-height: 250px;
+    border-radius: 50px;
+    margin-left: 430px;
 }
 
 .chat {
-    width: 400px;
+    width: 1270px;
     font-size: 1.5em;
     display: flex;
     flex-direction: column;
     border: solid 1px #333333;
     border-radius: 5px;
     padding: 20px;
+    margin-bottom: 20px;
 }
 
 .chat span {
-    margin-bottom: 10px;
-    padding: 5px;
-    border: solid 1px #222222;
-    border-radius: 2px;
+    background: #ffc4d8;
+    margin-top: 25px;
+    width: 1100px;
+    height: 50px;
+    border-radius: 9px ;
+    position: relative;
+    padding: 10px;
+}
+
+.chat span:after{
+
+    content: "";
+
+    width: 0;
+    height: 0;
+
+    position: absolute;
+
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 22px solid #ffc4d8;
+
+    
+    bottom: -20px;
+    left: 0.8%;
 }
 
 .chat strong {
     text-transform: capitalize;
 }
 
+.chat .time{
+    font-size: 0.5em;
+}
+
 .inputs {
-    font-size: 1.5em;
+    display: flex;
+    flex-direction: row;
+    margin-right: 10px;
 }
 
 .inputs input {
-    padding: 3px;
+    width: 1100px;
+    right: 50px;
+    padding: 10px;
+    margin-left: 15px;
+    margin-right: 10px;
+    font-size: 1.5em;
+    border-radius: 9px ;
 }
+

@@ -6,19 +6,19 @@
     </head>
 
     <body>
-        <a href="{{ url_for('trocar_usuario') }}"><button>Trocar usuario</button></a>
+        <a href="{{ url_for('trocar_usuario') }}" ><button class="trocar_usuario">Trocar usuario</button></a>
         <img class="imagem_chat" src="{{ url_for('static', filename='lotus_chat.png') }}"
         <div class="box">
-            <div class="chat">
+            <div class="chat" >
             {% for mensagem in mensagems %}
-            <span><strong>{{mensagem.nome}}:</strong> {{mensagem.message}} {{mensagem.time}}</span>
+            <span><strong>{{mensagem.nome}}:</strong> {{mensagem.message}} <span class="time">{{mensagem.time}}</span></span>
             {% endfor %}
 
             </div>
             <div>
-                <form class="inputs">
+                <form class="inputs" id="chat">
                     <input type="hidden" value="{{ session.user }}">
-                    <input type="text" placeholder="insira sua mensagem">
+                    <input type="text" placeholder="insira sua mensagem" >
                     <button type="submit">submit</button>
                 </form>
 
@@ -30,11 +30,10 @@
                 function addToChat(msg){
                     const span = document.createElement("span");
                     const chat = document.querySelector(".chat");
-                    span.innerHTML = `<strong>${msg.nome}:</strong> ${msg.message} ${msg.time}`
+                    span.innerHTML = `<strong>${msg.nome}:</strong> ${msg.message} <span class="time">${msg.time}</span>`
                     chat.append(span);
-
                 }
-                const socket = io("http://192.168.0.22:5000");
+                const socket = io("http://192.168.0.28:5000");
 
                 socket.on('conect', () => {
                     socket.send('usuario conectado')
@@ -45,10 +44,12 @@
                     socket.emit('sendMessage', {nome: event.target[0].value, message: event.target[1].value})
 
                     event.target[1].value = "";
-                })
+                });
 
                 socket.on('getMsg', (msg) => {
                     addToChat(msg);
+                    var heightPage = document.body.scrollHeight;
+                    window.scrollTo(0 , heightPage);
                 });
             }
         </script>
