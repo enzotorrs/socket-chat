@@ -5,9 +5,9 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}"
     </head>
     <body>
-        <div>
+        <div class="box">
             <form method="POST" action="{{ url_for('autenticar') }}">
-                <input type="text" placeholder="insira seu usuario" name="user" class="user">
+                <input type="text" placeholder="Insira seu usuario" name="user" class="user">
                 <button type="submit">Entrar</button>
             </form>
         </div>

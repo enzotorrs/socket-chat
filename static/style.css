@@ -1,46 +1,52 @@
 body{
     background-color: #15034f;
 }
-.trocar_usuario {
-    color: #15034f;
-
-}
 
 .box {
-    margin-left: 10px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
 }
 
+.trocar_usuario {
+    background-color: #cccccc;
+    border: solid 1px #000 ;
+    border-radius: 10px;
+    padding: 8px;
+    margin-bottom: 1em;
+    box-shadow: 2px 2px #000;
+}
+
+
 .imagem_chat {
+    display: block;
     padding: 20px;
-    width: auto;
-    height: auto;
     max-width: 250px;
     max-height: 250px;
-    border-radius: 50px;
-    margin-left: 430px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .chat {
-    width: 1270px;
     font-size: 1.5em;
     display: flex;
     flex-direction: column;
-    border: solid 1px #333333;
-    border-radius: 5px;
+    border: solid 1px #aaa;
+    border-radius: 20px;
     padding: 20px;
     margin-bottom: 20px;
 }
 
 .chat .message, .message_mine{
     margin-top: 25px;
-    width: 1100px;
-    height: 50px;
-    border-radius: 9px ;
+    border-radius: 15px ;
     position: relative;
     padding: 10px;
     box-sizing: content-box;
     overflow: hidden;
     text-overflow: clip;
+    box-shadow: 2px 2px #000;
 }
 
 .chat .message{
@@ -95,12 +101,20 @@ body{
 }
 
 .inputs input {
-    width: 1100px;
-    right: 50px;
+    width: 100%;
     padding: 10px;
     margin-left: 15px;
     margin-right: 10px;
     font-size: 1.5em;
-    border-radius: 9px ;
+    border-radius: 15px ;
+    box-shadow: 2px 2px #000;
+    border: solid 1px #eee;
+}
+
+.inputs button{
+    box-shadow: 2px 2px #000;
+    border-radius: 15px ;
+    border: solid 1px #eee;
+
 }
 

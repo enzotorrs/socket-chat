@@ -7,15 +7,17 @@
     </head>
 
     <body>
-        <a href="{{ url_for('trocar_usuario') }}" ><button class="trocar_usuario">Trocar usuario</button></a>
-        <img class="imagem_chat" src="{{ url_for('static', filename='lotus_chat.png') }}">
         <div class="box">
+            <img class="imagem_chat" src="{{ url_for('static', filename='lotus_chat.png') }}">
+            <a href="{{ url_for('trocar_usuario') }}" ><button class="trocar_usuario">Trocar usuario</button></a>
             <div class="chat" >
             {% for mensagem in mensagems %}
             {% if mensagem.nome == session.user %}
-            <span class="message_mine"><strong>{{mensagem.nome}}:</strong> {{mensagem.message}} <span class="time">{{mensagem.time}}</span></span>
+                <span class="message_mine"><strong>{{mensagem.nome}}:</strong>
+                    {{mensagem.message}} <span class="time">{{mensagem.time}}</span></span>
             {% else %}
-            <span class="message"><strong>{{mensagem.nome}}:</strong> {{mensagem.message}} <span class="time">{{mensagem.time}}</span></span>
+                <span class="message"><strong>{{mensagem.nome}}:</strong>
+                    {{mensagem.message}} <span class="time">{{mensagem.time}}</span></span>
             {% endif %}
             {% endfor %}
 
@@ -23,7 +25,7 @@
             <div>
                 <form class="inputs" id="chat">
                     <input type="hidden" value="{{ session.user }}">
-                    <input type="text" placeholder="insira sua mensagem" >
+                    <input type="text" placeholder="Insira sua mensagem" >
                     <button type="submit">submit</button>
                 </form>
 
