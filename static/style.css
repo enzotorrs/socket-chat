@@ -29,24 +29,30 @@ body{
 }
 
 .chat {
-    font-size: 1.5em;
+    font-size: 2em;
     display: flex;
     flex-direction: column;
     border: solid 1px #aaa;
     border-radius: 20px;
-    padding: 20px;
+    padding: 30px;
     margin-bottom: 20px;
+}
+.chat span ~ span{
+    margin-top: 20px;
 }
 
 .chat .message, .message_mine{
-    margin-top: 25px;
-    border-radius: 15px ;
+    border-radius: 20px 20px 10px 20px ;
     position: relative;
     padding: 10px;
     box-sizing: content-box;
     overflow: hidden;
     text-overflow: clip;
     box-shadow: 2px 2px #000;
+}
+.message + .message, .message_mine + .message_mine{
+    margin-top: 5px;
+    border-radius: 20px 10px 10px 20px ;
 }
 
 .chat .message{
@@ -56,56 +62,27 @@ body{
     background: #cccccc;
 }
 
-.chat .message:after{
-    content: "";
-
-    width: 0;
-    height: 0;
-
-    position: absolute;
-
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-top: 22px solid #ffc4d8;
-    bottom: -20px;
-    left: 0.8%;
-}
-.chat .message_mine:after{
-
-    content: "";
-
-    width: 0;
-    height: 0;
-
-    position: absolute;
-
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-top: 22px solid #cccccc;
-    bottom: -20px;
-    right: 0.8%;
-}
-
 .chat strong {
     text-transform: capitalize;
 }
 
 .chat .time{
     font-size: 0.5em;
+    opacity: 0.8;
 }
 
 .inputs {
     display: flex;
     flex-direction: row;
     margin-right: 10px;
+    padding: 10px 20px;
 }
 
 .inputs input {
-    width: 100%;
+    width: 90%;
     padding: 10px;
-    margin-left: 15px;
-    margin-right: 10px;
-    font-size: 1.5em;
+    margin: 0 auto;
+    font-size: 2em;
     border-radius: 15px ;
     box-shadow: 2px 2px #000;
     border: solid 1px #eee;
