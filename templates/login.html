@@ -7,7 +7,7 @@
     <body>
         <div class="box">
             <form method="POST" action="{{ url_for('autenticar') }}">
-                <input type="text" placeholder="Insira seu usuario" name="user" class="user">
+                <input type="text" placeholder="Insira seu usuario" name="user" class="user" required>
                 <button type="submit">Entrar</button>
             </form>
         </div>

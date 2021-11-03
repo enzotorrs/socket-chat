@@ -58,6 +58,7 @@ body{
 .chat .message{
     background-color: #ffc4d8;
 }
+
 .chat .message_mine{
     background: #cccccc;
 }
@@ -74,24 +75,29 @@ body{
 .inputs {
     display: flex;
     flex-direction: row;
-    margin-right: 10px;
-    padding: 10px 20px;
+    padding: 10px 30px;
+}
+
+.inputs form{
+    display: flex;
+    width: 100%;
 }
 
 .inputs input {
-    width: 90%;
     padding: 10px;
-    margin: 0 auto;
     font-size: 2em;
-    border-radius: 15px ;
+    border-radius: 15px 0 0 15px;
     box-shadow: 2px 2px #000;
     border: solid 1px #eee;
+    width: 95%;
 }
+
 
 .inputs button{
     box-shadow: 2px 2px #000;
-    border-radius: 15px ;
+    border-radius: 0 15px 15px 0;
     border: solid 1px #eee;
+    background-color: #ab212e; /* achar cor melhor  */
 
 }
 
