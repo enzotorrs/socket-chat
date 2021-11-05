@@ -10,6 +10,7 @@ body{
 }
 
 .trocar_usuario {
+    font-size: 1.25em;
     background-color: #cccccc;
     border: solid 1px #000 ;
     border-radius: 10px;
@@ -88,7 +89,7 @@ body{
     font-size: 2em;
     border-radius: 15px 0 0 15px;
     box-shadow: 2px 2px #000;
-    border: solid 1px #eee;
+    border: solid 3px #ab212e;
     width: 95%;
 }
 
@@ -96,7 +97,8 @@ body{
 .inputs button{
     box-shadow: 2px 2px #000;
     border-radius: 0 15px 15px 0;
-    border: solid 1px #eee;
+    border: solid 3px #ab212e;
+    border-left: none;
     background-color: #ab212e; /* achar cor melhor  */
 
 }
