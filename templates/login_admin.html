@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Login admin</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='login-admin.html') }}">
+        <meta name='viewport' content='width=device-width, initial-scale=0.5, maximum-scale=0.5, user-scalable=0'/>
+    </head>
+
+    <body>
+        <div class="box">
+            <form method="POST" action="{{ url_for('autenticar_admin') }}" >
+                <input placeholder="insira seu usuario" name="usuario" value="Lotús Hall">
+                <input placeholder="insira sua senha" name="senha">
+                <button type="submit">enviar</button>
+            </form>
+        </div>
+    </body>
+</html>

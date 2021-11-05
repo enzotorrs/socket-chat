@@ -8,7 +8,12 @@ window.onload = function(){
         else{
             span.className = "message"
         }
-        span.innerHTML = `<strong>${msg.nome}:</strong> ${msg.message} <span class="time">${msg.time}</span>`
+        if ("{{ session.admin }}" === "True"){
+            span.innerHTML = `<strong>${msg.nome}:</strong> ${msg.message} <span class="time">${msg.time}</span>
+                <a href="deletar/${msg.indice}">deletar</a>`
+        }else{
+            span.innerHTML = `<strong>${msg.nome}:</strong> ${msg.message} <span class="time">${msg.time}</span>`
+        }
         chat.append(span);
     }
     const uri = window.location.origin

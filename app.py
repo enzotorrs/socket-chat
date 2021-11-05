@@ -33,10 +33,44 @@ def autenticar():
     session['user'] = request.form['user']
     return redirect(url_for('home'))
 
+@app.route('/admin')
+def admin():
+    if session.get('admin') == True:
+        return render_template("admin.html", mensagems=mensagems)
+    else:
+        return redirect(url_for('login_admin'))
+
+@app.route('/deletar/<int:indice>')
+def deletar(indice):
+    del(mensagems[indice])
+    return redirect(url_for('admin'))
+
+@app.route('/login_admin')
+def login_admin():
+    return render_template('login_admin.html')
+
+@app.route('/autenticar_admin', methods=['POST', ])
+def autenticar_admin():
+    usuario = request.form['usuario']
+    senha = request.form['senha']
+    if senha == 'batatinhafrita':
+        session['user'] = usuario
+        session['admin'] = True
+        return redirect(url_for('admin'))
+    else:
+        redirect(url_for('login_admin'))
+
+@app.route('/logout')
+def logout():
+    session['admin'] = False
+    return redirect(url_for('home'))
+
 @io.on('sendMessage')
 def message_handler(msg):
     msg['time'] = get_time_now()
     mensagems.append(msg);
+    # msg['indice'] = len(mensagems)
+    msg['indice'] = mensagems.index(msg)
     emit('getMsg', msg, broadcast=True)
 
 

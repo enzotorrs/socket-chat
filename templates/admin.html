@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Admin da Lotus</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <meta name='viewport' content='width=device-width, initial-scale=0.5, maximum-scale=0.5, user-scalable=0'/>
+    </head>
+
+    <body>
+        <div class="box">
+            <img class="imagem_chat" src="{{ url_for('static', filename='lotus_chat.png') }}">
+            <a href="{{ url_for('logout') }}" ><button class="trocar_usuario">logout</button></a>
+            <div class="chat" >
+            {% for  mensagem in mensagems  %}
+            {% if mensagem.nome == session.user %}
+                <span class="message_mine"><strong>{{mensagem.nome}}:</strong>
+                    {{mensagem.message}} <span class="time">{{mensagem.time}}</span>
+                    <a href="{{ url_for('deletar', indice=loop.index0) }}">deletar</a></span> 
+            {% else %}
+                <span class="message"><strong>{{mensagem.nome}}:</strong>
+                    {{mensagem.message}} <span class="time">{{mensagem.time}}</span>
+                    <a href="{{ url_for('deletar', indice=loop.index0) }}">deletar</a></span>
+            {% endif %}
+            {% endfor %}
+
+            </div>
+            <div class="inputs">
+                <form  id="chat">
+                    <input type="hidden" value="{{ session.user }}">
+                    <input type="text" placeholder="Insira sua mensagem" autofocus required>
+                    <button type="submit">Enviar</button>
+                </form>
+
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.2/socket.io.js"></script>
+        <script type="text/javascript">
+            {% include "socket_script.js" %}
+        </script>
+    </body>
+</html>
