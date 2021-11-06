@@ -5,11 +5,12 @@
         <title>Chat da Lotus</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
         <meta name='viewport' content='width=device-width, initial-scale=0.5, maximum-scale=0.5, user-scalable=0'/>
+        <link rel="shortcut icon" type="imagex/png" href="{{ url_for('static', filename='lotus_chat.ico') }}">
     </head>
 
     <body>
         <div class="box">
-            <img class="imagem_chat" src="{{ url_for('static', filename='lotus_chat.png') }}">
+            <img class="imagem_chat" src="{{ url_for('static', filename='lotus_logo.png') }}">
             <a href="{{ url_for('trocar_usuario') }}" ><button class="trocar_usuario">Trocar usuario</button></a>
             <div class="chat" >
             {% for mensagem in mensagems %}
