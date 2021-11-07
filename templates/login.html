@@ -3,11 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}"
+        <meta name='viewport' content='width=device-width, initial-scale=.65, maximum-scale=.65, user-scalable=0'/>
     </head>
     <body>
         <div class="box">
+            <img src="{{ url_for('static', filename='chat_login.png') }}" alt="chat_login">
             <form method="POST" action="{{ url_for('autenticar') }}">
-                <input type="text" placeholder="Insira seu usuario" name="user" class="user" required>
+                <input type="text" placeholder="Insira seu usuario" name="user" class="user" required autofocus>
                 <button type="submit">Entrar</button>
             </form>
         </div>

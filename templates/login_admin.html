@@ -2,15 +2,18 @@
     <head>
         <meta charset="UTF-8">
         <title>Login admin</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='login-admin.html') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
         <meta name='viewport' content='width=device-width, initial-scale=0.5, maximum-scale=0.5, user-scalable=0'/>
+        <!-- <meta name="viewport" content="width=device-width"> -->
+        
     </head>
 
     <body>
         <div class="box">
+            <img src="{{ url_for('static', filename='chat_login.png') }}" alt="chat_login">
             <form method="POST" action="{{ url_for('autenticar_admin') }}" >
-                <input placeholder="insira seu usuario" name="usuario" value="Lotús Hall">
-                <input placeholder="insira sua senha" name="senha">
+                <input class="user" placeholder="insira seu usuario" name="usuario" value="Lotús Hall">
+                <input class="user" placeholder="insira sua senha" name="senha" type="password">
                 <button type="submit">enviar</button>
             </form>
         </div>

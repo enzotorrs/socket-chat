@@ -63,7 +63,7 @@ def autenticar_admin():
 @app.route('/logout')
 def logout():
     session['admin'] = False
-    return redirect(url_for('home'))
+    return redirect(url_for('login'))
 
 @io.on('sendMessage')
 def message_handler(msg):
