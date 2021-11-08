@@ -58,7 +58,7 @@ def autenticar_admin():
         session['admin'] = True
         return redirect(url_for('admin'))
     else:
-        redirect(url_for('login_admin'))
+        return redirect(url_for('login_admin'))
 
 @app.route('/logout')
 def logout():
