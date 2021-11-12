@@ -1,0 +1,21 @@
+nav {
+  display: flex;
+  margin-bottom: 1rem;
+}
+.flash {
+  list-style: none;
+  padding-left: 1.5rem;
+}
+
+.flash li {
+  width: auto;
+  padding: 0.5rem;
+  border: solid 1px;
+  border-radius: 5px;
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  border-top-color: #c9e2b3;
+  /* color: #2b542c; */
+  box-shadow: 2px 2px #000;
+}

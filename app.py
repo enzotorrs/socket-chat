@@ -1,6 +1,6 @@
 from datetime import datetime
 from flask import Flask, render_template, session, redirect, request
-from flask.helpers import url_for
+from flask.helpers import flash, url_for
 from flask_socketio import SocketIO, emit
 
 app = Flask(__name__)
@@ -56,13 +56,16 @@ def autenticar_admin():
     if senha == 'batatinhafrita':
         session['user'] = usuario
         session['admin'] = True
+        flash('logado como administrador')
         return redirect(url_for('admin'))
     else:
+        flash('Login incorreto')
         return redirect(url_for('login_admin'))
 
 @app.route('/logout')
 def logout():
     session['admin'] = False
+    flash('deslogado do administrador')
     return redirect(url_for('login'))
 
 @io.on('sendMessage')

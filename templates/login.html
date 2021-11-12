@@ -2,12 +2,22 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}"
+        <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
         <meta name='viewport' content='width=device-width, initial-scale=.65, maximum-scale=.65, user-scalable=0'/>
     </head>
     <body>
         <div class="box">
             <img src="{{ url_for('static', filename='chat_login.png') }}" alt="chat_login">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class=flash>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            {% endwith %}
             <form method="POST" action="{{ url_for('autenticar') }}">
                 <input type="text" placeholder="Insira seu usuario" name="user" class="user" required autofocus>
                 <button type="submit">Entrar</button>
