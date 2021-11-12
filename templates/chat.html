@@ -3,17 +3,28 @@
     <head>
         <meta charset="UTF-8">
         <title>Chat da Lotus</title>
+        <link rel="shortcut icon" type="imagex/png" href="{{ url_for('static', filename='lotus_chat.ico') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='base.css')  }}">
         <meta name='viewport' content='width=device-width, initial-scale=.65, maximum-scale=.65, user-scalable=0'/>
         <!-- <meta name='viewport' content='width=device-width, initial-scale=1.0'/> -->
-        
-        <link rel="shortcut icon" type="imagex/png" href="{{ url_for('static', filename='lotus_chat.ico') }}">
     </head>
 
     <body>
         <div class="box">
             <img class="imagem_chat" src="{{ url_for('static', filename='lotus_logo.png') }}">
-            <a href="{{ url_for('trocar_usuario') }}" ><button class="trocar_usuario">Trocar usuario</button></a>
+            <nav>
+                <a href="{{ url_for('trocar_usuario') }}" ><button class="trocar_usuario">Trocar usuario</button></a>
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul class=flash>
+                        {% for message in messages %}
+                            <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                {% endwith %}
+            </nav>
             <div class="chat" >
             {% for mensagem in mensagems %}
             {% if mensagem.nome == session.user %}
