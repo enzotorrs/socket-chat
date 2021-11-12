@@ -10,7 +10,7 @@ window.onload = function(){
         }
         if ("{{ session.admin }}" === "True"){
             span.innerHTML = `<strong>${msg.nome}:</strong> ${msg.message} <span class="time">${msg.time}</span>
-                <a href="deletar/${msg.indice}">deletar</a>`
+                <a class="delete" href="deletar/${msg.indice}">deletar</a>`
         }else{
             span.innerHTML = `<strong>${msg.nome}:</strong> ${msg.message} <span class="time">${msg.time}</span>`
         }

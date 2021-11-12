@@ -5,6 +5,7 @@
         <title>Admin da Lotus</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='base.css')  }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
         <meta name='viewport' content='width=device-width, initial-scale=0.5, maximum-scale=0.5, user-scalable=0'/>
         <link rel="shortcut icon" type="imagex/png" href="{{ url_for('static', filename='lotus_chat.ico') }}">
     </head>
@@ -29,11 +30,11 @@
             {% if mensagem.nome == session.user %}
                 <span class="message_mine"><strong>{{mensagem.nome}}:</strong>
                     {{mensagem.message}} <span class="time">{{mensagem.time}}</span>
-                    <a href="{{ url_for('deletar', indice=loop.index0) }}">deletar</a></span> 
+                    <a class="delete" href="{{ url_for('deletar', indice=loop.index0) }}">deletar</a></span> 
             {% else %}
                 <span class="message"><strong>{{mensagem.nome}}:</strong>
                     {{mensagem.message}} <span class="time">{{mensagem.time}}</span>
-                    <a href="{{ url_for('deletar', indice=loop.index0) }}">deletar</a></span>
+                    <a class="delete" href="{{ url_for('deletar', indice=loop.index0) }}">deletar</a></span>
             {% endif %}
             {% endfor %}
 
