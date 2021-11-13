@@ -5,7 +5,7 @@ nav {
 }
 .flash {
   list-style: none;
-  padding-left: 1.5rem;
+  padding-left: 0;
 }
 
 .flash li {
@@ -19,4 +19,5 @@ nav {
   border-top-color: #c9e2b3;
   /* color: #2b542c; */
   box-shadow: 2px 2px #000;
+  font-size: 0.7em;
 }

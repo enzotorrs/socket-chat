@@ -2,29 +2,26 @@ body{
 	background-color: #15034f;
 }
 .box {
-	width: 70%;
-	margin-left: auto;
-	margin-right: auto;
 	display: flex;
-	padding: 20px;
+	padding: 1rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 .box img{
 	align-self: center;
-	max-height: 1300px;
+	max-height: 200px;
 }
 .box form{
 	margin-left: auto;
 	margin-right: auto;
-	padding: 10px;
+	padding: 0.4rem;
 	display: flex;
 }
 
 .user {
-	padding: 10px;
-	font-size: 2em;
+	padding: 0.4rem;
+	font-size: 1em;
 	border-radius: 10px;
 	border: solid 1px #000;
 }
