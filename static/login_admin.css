@@ -1,13 +1,19 @@
 .login {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+    align-items: flex-start;
     height: 200px;
 }
-
+.login .user{
+    margin-bottom: 1rem;
+}
 .login button {
-    width: 33%;
+    width: 40%;
     padding: 0.5rem;
     font-size: 1em;
+    align-self: center;
+}
+
+.login__label{
+    padding: 0.2rem 0.5rem;
 }

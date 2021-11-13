@@ -23,7 +23,9 @@
                 {% endif %}
                 {% endwith %}
             <form class="login" method="POST" action="{{ url_for('autenticar_admin') }}" >
+                <label class="login__label">Usuario</label>
                 <input class="user" placeholder="insira seu usuario" name="usuario" value="Lotús Hall">
+                <label class="login__label">Senha</label>
                 <input class="user" placeholder="insira sua senha" name="senha" type="password">
                 <button type="submit">enviar</button>
             </form>
