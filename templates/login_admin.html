@@ -1,10 +1,11 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta name='viewport' content='width=device-width, initial-scale=0.5, maximum-scale=0.5, user-scalable=0'/>
         <title>Login admin</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='login_admin.css') }}">
+        <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'/>
         <!-- <meta name="viewport" content="width=device-width"> -->
         
     </head>
@@ -21,7 +22,7 @@
                 </ul>
                 {% endif %}
                 {% endwith %}
-            <form method="POST" action="{{ url_for('autenticar_admin') }}" >
+            <form class="login" method="POST" action="{{ url_for('autenticar_admin') }}" >
                 <input class="user" placeholder="insira seu usuario" name="usuario" value="Lotús Hall">
                 <input class="user" placeholder="insira sua senha" name="senha" type="password">
                 <button type="submit">enviar</button>

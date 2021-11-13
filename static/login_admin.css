@@ -1,0 +1,13 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 200px;
+}
+
+.login button {
+    width: 33%;
+    padding: 0.5rem;
+    font-size: 1em;
+}
