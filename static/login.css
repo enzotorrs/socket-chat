@@ -4,13 +4,12 @@ body{
 .box {
 	display: flex;
 	padding: 1rem;
-	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 .box img{
 	align-self: center;
-	max-height: 200px;
+	max-height: 300px;
 }
 .box form{
 	margin-left: auto;
