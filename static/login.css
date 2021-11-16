@@ -9,7 +9,7 @@ body{
 }
 .box img{
 	align-self: center;
-	max-height: 300px;
+	max-height: 250px;
 }
 .box form{
 	margin-left: auto;
