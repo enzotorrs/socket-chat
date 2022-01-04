@@ -17,6 +17,7 @@ window.onload = function(){
         chat.append(span);
     }
     const uri = window.location.origin
+    console.log(uri);
     const socket = io(uri);
 
     socket.on('conect', () => {
